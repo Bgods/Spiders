@@ -41,13 +41,12 @@ class MafengwoSpider:
         # 定义data列表，用于保存该页面提取的数据
         data = {}
         for l in L:
-            l = etree.HTML(etree.tostring(l))
-            data['home_url'] = self.process_data(l.xpath('//div[@class="img"]/a/@href'))
-            data['home_img'] = self.process_data(l.xpath('//li/div/a/img/@data-original'))
-            data['cnname'] = self.process_data(l.xpath('//div[@class="title"]/text()[1]'))
-            data['enname'] = self.process_data(l.xpath('//p[@class="enname"]/text()'))
-            data['visit_nums'] = self.process_data(l.xpath('//div[@class="nums"]/b/text()'))
-            data['detail'] = self.process_data(l.xpath('//div[@class="detail"]/text()'))
+            data['home_url'] = self.process_data(l.xpath('div[@class="img"]/a/@href'))
+            data['home_img'] = self.process_data(l.xpath('div[@class="img"]//img/@data-original'))
+            data['cnname'] = self.process_data(l.xpath('div[@class="img"]/a/div/text()[1]'))
+            data['enname'] = self.process_data(l.xpath('div[@class="img"]//p[@class="enname"]/text()'))
+            data['visit_nums'] = self.process_data(l.xpath('dl[@class="caption"]//div[@class="nums"]/b/text()'))
+            data['detail'] = self.process_data(l.xpath('dl[@class="caption"]//div[@class="detail"]/text()'))
 
             #print(data)
             self.write_sql(data)  #把数据写入数据库
