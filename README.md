@@ -7,3 +7,6 @@
 - [TaobaoMM_Spider](https://github.com/Bgods/TaobaoMM)
 - [Yiche_Spider](https://github.com/Bgods/yiche_spider)
 - [Mafengwo_Spider](https://github.com/Bgods/Spiders/tree/master/Mafengwo_Spider)
+- [douban_movie_Spider](https://github.com/Bgods/Spiders/tree/master/douban_movie)
+
+
